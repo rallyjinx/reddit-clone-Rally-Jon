@@ -13,3 +13,7 @@
 main.container {
   margin-bottom: 4em;
 }
+
+.has-error {
+  border-color: red;
+}
