@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>Reddit Clone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="images/reddit-alien-zombied.jpg" sizes="16x16">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
@@ -29,7 +30,7 @@
     <main class="container">
 
       <div class="pull-right">
-        <p><a class="btn btn-info">New Post</a></p>
+        <p><button class="btn btn-info" ng-click="clicked=!clicked" ng-model="clicked">New Post</button></p>
       </div>
 
       <ul class="nav nav-pills">
@@ -52,29 +53,7 @@
       <div class="row">
         <div class="col-md-8">
 
-          <form>
-            <div>
-              <label for="title">Title</label>
-              <input id="title" class="form-control">
-            </div>
-            <div>
-              <label for="body">Body</label>
-              <textarea id="body" class="form-control"></textarea>
-            </div>
-            <div>
-              <label for="author">Author</label>
-              <input id="author" class="form-control">
-            </div>
-            <div>
-              <label for="image-url">Image URL</label>
-              <input id="image-url" class="form-control">
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary">
-                Create Post
-              </button>
-            </div>
-          </form>
+          <new-post ng-if="clicked"></new-post>
 
         </div>
       </div>
@@ -130,5 +109,7 @@
         </div>
       </div>
     </main>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
